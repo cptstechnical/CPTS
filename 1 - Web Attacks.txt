@@ -1,0 +1,40 @@
+=================================================================================
+[Introducción]:
+## Ataques web
+  - Manipulación de verbos HTTP: Explotación de servidores que aceptan métodos HTTP inesperados para evadir autorizaciones y sortear controles de seguridad mediante solicitudes maliciosas.
+  - Referencias directas a objetos inseguras (IDOR): Falta de control de acceso que permite acceder a datos o recursos de otros usuarios adivinando o manipulando identificadores.
+  - Inyección de entidad externa XML (XXE): Uso de analizadores XML inseguros para forzar la divulgación de archivos locales o credenciales del servidor y comprometer datos sensibles.
+
+=================================================================================
+[Introducción a la manipulación de verbos HTTP]:
+## Manipulación de verbos HTTP
+  - HEAD :	    Idéntico a una solicitud GET, pero su respuesta solo contiene el headers, sin el cuerpo de la respuesta
+  - PUT :	      Escribe la carga útil de la solicitud en la ubicación especificada
+  - DELETE :	  Elimina el recurso en la ubicación especificada
+  - OPTIONS :	  Muestra diferentes opciones aceptadas por un servidor web, como verbos HTTP aceptados
+  - PATCH :	    Aplicar modificaciones parciales al recurso en la ubicación especificada
+
+## Configuraciones inseguras
+# Configuraciones inseguras del servidor (p. ej. autenticación aplicada solo a ciertos métodos)
+# ejemplo con xml
+---------------------------------------------------------------------------------
+<Limit GET POST>
+    Require valid-user
+</Limit>
+# Aunque la autenticación cobre GET y POST, un atacante puede usar otro método HTTP (p. ej. HEAD) para eludirla y acceder a recursos no autorizados.
+---------------------------------------------------------------------------------
+
+## Codificación insegura
+# Las malas prácticas de codificación generan vulnerabilidades al aplicar filtros incompletos que no cubren todos los métodos HTTP, permitiendo ataques como inyección SQL por rutas no filtradas.
+# ejemplo con php
+---------------------------------------------------------------------------------
+$pattern = "/^[A-Za-z\s]+$/";
+
+if(preg_match($pattern, $_GET["code"])) {
+    $query = "Select * from ports where port_code like '%" . $_REQUEST["code"] . "%'";
+    ...SNIP...
+}
+# El atacante puede usar una solicitud POST para enviar datos maliciosos que evaden los filtros aplicados solo a parámetros GET, aprovechando así una validación incompleta.
+---------------------------------------------------------------------------------
+
+
