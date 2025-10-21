@@ -1,12 +1,12 @@
 =================================================================================
-[Introducción]:
+[🔥 Introducción]:
 ## Ataques web
   - Manipulación de verbos HTTP: Explotación de servidores que aceptan métodos HTTP inesperados para evadir autorizaciones y sortear controles de seguridad mediante solicitudes maliciosas.
   - Referencias directas a objetos inseguras (IDOR): Falta de control de acceso que permite acceder a datos o recursos de otros usuarios adivinando o manipulando identificadores.
   - Inyección de entidad externa XML (XXE): Uso de analizadores XML inseguros para forzar la divulgación de archivos locales o credenciales del servidor y comprometer datos sensibles.
 
 =================================================================================
-[Introducción a la manipulación de verbos HTTP]:
+[🔥 Introducción a la manipulación de verbos HTTP]:
 ## Manipulación de verbos HTTP
   - HEAD :	    Idéntico a una solicitud GET, pero su respuesta solo contiene el headers, sin el cuerpo de la respuesta
   - PUT :	      Escribe la carga útil de la solicitud en la ubicación especificada
@@ -38,6 +38,6 @@ if(preg_match($pattern, $_GET["code"])) {
 ---------------------------------------------------------------------------------
 
 =================================================================================
-[Cómo eludir la autenticación básica]:
+[🔥 Cómo eludir la autenticación básica]:
 ## Identificar verbos HTTP
 # HTB muestra un ejemplo de como con la herramienta (👽 Burp Suite) puede forzar una solicitud DELETE de una web (random), a través de las pistas que le dan los métodos GET y HEAD.
