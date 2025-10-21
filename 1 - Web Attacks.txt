@@ -40,4 +40,4 @@ if(preg_match($pattern, $_GET["code"])) {
 =================================================================================
 [🔥 Cómo eludir la autenticación básica]:
 ## Identificar verbos HTTP
-# HTB muestra un ejemplo de como con la herramienta (👽 Burp Suite) puede forzar una solicitud DELETE de una web (random), a través de las pistas que le dan los métodos GET y HEAD.
+# HTB muestra un ejemplo de como con la herramienta (🎃 Burp Suite) puede forzar una solicitud DELETE de una web (random), a través de las pistas que le dan los métodos GET y HEAD.
