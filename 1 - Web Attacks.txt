@@ -37,4 +37,7 @@ if(preg_match($pattern, $_GET["code"])) {
 # El atacante puede usar una solicitud POST para enviar datos maliciosos que evaden los filtros aplicados solo a parámetros GET, aprovechando así una validación incompleta.
 ---------------------------------------------------------------------------------
 
-
+=================================================================================
+[Cómo eludir la autenticación básica]:
+## Identificar verbos HTTP
+# HTB muestra un ejemplo de como con la herramienta Burp Suite puede forzar una solicitud DELETE de una web (random), a través de las pistas que le dan los métodos GET y HEAD.
