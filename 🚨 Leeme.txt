@@ -1,5 +1,18 @@
+## 🎃 Como seguir el curso
 - Estoy anotando las partes más importantes para estudiar y como anotaciones para el exámen.
 - He utilizado la extensión de Chrome para la lectura automática:
     + Botón derecho - traducir al español
     + seleccionar el texto que quiero que dicte
     + play extensión
+
+## 🎃 Cuando termino
+- si realizo 3 secciones cada día y cada curso tiene unas 18 secciones aproximadamente, hago una media de 1 curso cada 6 días
+- el curso tiene 28 modulos
+
+28 m -----> X
+1 m ------> 6 d
+
+x = 28*6/1 = 168
+168/30= 5,6
+
++ En completar el curso tardo una media aproximada de 6 meses realizando cada día tres secciones por curso
