@@ -1,2 +1,5 @@
 - Estoy anotando las partes más importantes para estudiar y como anotaciones para el exámen.
-- He utilizado la extensión de Chrome para la lectura automática de " ".
+- He utilizado la extensión de Chrome para la lectura automática:
+    + Botón derecho - traducir al español
+    + seleccionar el texto que quiero que dicte
+    + play extensión
