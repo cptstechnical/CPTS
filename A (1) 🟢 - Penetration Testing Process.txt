@@ -1,15 +1,97 @@
 ======================================================================================================================================================
 ## 🎃 Introducción a la ruta del probador de penetración
 [texto-inicial]
-Nuestra filosofía es "aprender haciendo", siguiendo un enfoque basado en el riesgo, con un fuerte énfasis en el aprendizaje práctico y el uso ético y legal de nuestras habilidades. Nos esforzamos por enseñar a nuestros estudiantes el porqué de una vulnerabilidad y cómo descubrirla, explotarla, remediarla, detectarla y prevenirla para formar profesionales integrales que puedan transmitir este conocimiento y mentalidad integrales a sus clientes o empleadores actuales y futuros, para ayudarles a proteger a su personal, tecnologías y misiones de las ciberamenazas modernas.
+Nuestra filosofía se basa en “aprender haciendo”, con un enfoque práctico y orientado al riesgo, promoviendo el uso ético y legal de las habilidades. Buscamos formar profesionales completos que comprendan, exploten, mitiguen y prevengan vulnerabilidades, capaces de proteger sistemas y personas ante ciberamenazas modernas.
 
 ======================================================================================================================================================
 ## 🎃 Consideraciones éticas y legales
 [texto-inicial]
-Una parte esencial de la filosofía anterior son los términos legaly ethical. Realizar CUALQUIER escaneo o actividad que interactúe con ANYlos sistemas de una organización sin el consentimiento explícito por escrito en forma de un Alcance del trabajo (incluido un alcance detallado de las pruebas, el contrato y las reglas de participación) firmado por ambas partes es ilegal y podría dar lugar a acciones legales e incluso penales en nuestra contra.
-Una vez que consiga su primer trabajo de pruebas de penetración, investigue a fondo para asegurarse de que la empresa sea legítima y realice evaluaciones solo después de que se haya completado la coordinación explícita (y la documentación del contrato) entre la empresa objetivo y el cliente.
+- Legal/Ethical: Todo escaneo o interacción con sistemas de terceros requiere consentimiento por escrito (Alcance de Trabajo, contrato y RoE firmados). Sin ello es ilegal y puede acarrear responsabilidades civiles y penales.
+- Verificación del cliente: Antes de aceptar un encargo, verificar la legitimidad de la empresa y confirmar la coordinación y documentación contractual.
+- Plan de formación / Pentest simulado: Simula una prueba de penetración contra Inlanefreight dividida en etapas que enseñan conceptos y herramientas clave.
+- Habilidades blandas: Incluye módulo sobre toma de notas, organización, documentación, reporting y comunicación con el cliente.
+- Cierre práctico: Simulacro final de pentest en una red empresarial grande para integrar habilidades.
+- Siguiente paso: Tras completar la ruta, se recomienda especializarse en Active Directory, Web o Ingeniería inversa.
 
-El plan simula una prueba de penetración contra la empresa Inlanefreight, dividida en varias etapas, que abarcan los conceptos y herramientas clave que nos diferenciarán como expertos en pruebas de penetración. El plan culmina con un módulo detallado sobre habilidades blandas esenciales como la toma de notas, la organización, la documentación, la generación de informes y la comunicación con el cliente, y posteriormente con un simulacro completo de prueba de penetración para practicar todas nuestras habilidades en una gran red empresarial simulada. Los módulos que componen el plan se detallan a continuación. Después de completar esta ruta, recomendamos que los estudiantes trabajen hacia una especialización, ya sea Active Directory, Web o Ingeniería Inversa.
+======================================================================================================================================================
+## 🎃 Disposición de los módulos de la Academia
+# Checklist seguro y conciso para Pentest (lista para seguir paso a paso)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+## 0) Reglas previas (obligatorio antes de cualquier prueba)
+[ ] - No iniciar sin: **SOW + RoE firmados por ambas partes** (alcance, fechas, IPs/dominios, ventanas, métodos permitidos/prohibidos, contactos de emergencia, seguro y límites de responsabilidad).  
+[ ] - Registrar autorización escrita y conservar evidencia (email + contrato).  
+[ ] - Informar a SOC/operaciones si procede y acordar canales de comunicación. :contentReference[oaicite:0]{index=0}
+
+## 1) Pre-compromiso
+[ ] - Documentar: objetivos, entregables, cronograma, límites (NO-TEST), horario de pruebas, backout plan y criterios de éxito.
+[ ] - Entrega: contrato + RoE + lista de contactos + plan de notificación de incidentes. :contentReference[oaicite:1]{index=1}
+
+## 2) Information Gathering (recon)
+[ ] - Input mínimo aceptable: dominio + IPs/rangos; si falta, aclarar antes.  
+[ ] - Técnicas: OSINT, subdominios, DNS, enumeración pasiva/activa, fingerprinting (servicios, versiones).  
+[ ] - Salida: inventario mínimo (hosts, puertos, apps, versiones, endpoints). :contentReference[oaicite:2]{index=2}
+
+## 3) Vulnerability Assessment
+[ ] - Uso híbrido: **escáneres automatizados** + **análisis manual** (priorizar falsos positivos/negativos).  
+[ ] - Clasificar hallazgos por riesgo (CVSS o criterio interno) y confirmar manualmente antes de intentar explotación. :contentReference[oaicite:3]{index=3}
+
+## 4) Explotación
+[ ] - Solo ejecutar exploits permitidos por RoE.  
+[ ] - Documentar cada paso (comandos, payloads, time stamps, outputs).  
+[ ] - Mantener pruebas controladas: no destruir datos ni interrumpir servicios críticos.
+
+## 5) Post-explotación & Escalada
+[ ] - Pillaging inicial: inventario local (usuarios, servicios, credenciales, hashes).  
+[ ] - Escalada y pivotado solo con método y objetivo documentado; registrar evidencia para reproducciones (PoC).
+
+## 6) Movimiento lateral
+[ ] - Usar técnicas acordadas (tunneling, port-forwarding, pivots); auditar rutas y evitar persistencia no autorizada.
+
+## 7) Proof-of-Concept (PoC)
+[ ] - PoC mínima: pasos reproducibles + evidencia (screenshots, comandos, logs).  
+[ ] - Incluir mitigación sugerida rápida (hotfix) y mitigación completa.
+
+## 8) Post-compromiso (entrega)
+[ ] - Limpieza: eliminar shells, archivos, credenciales y herramientas; dejar comprobante de eliminación.  
+[ ] - Entregar informe técnico + resumen ejecutivo + apéndices (IOCs, PoC, recomendaciones priorizadas).  
+[ ] - Hacer revisión de salida con cliente y firma de recepción.
+
+## Controles adicionales de seguridad operativa
+[ ] - Backups: confirmar estado y que pruebas no afectarán respaldo.  
+[ ] - Ventana de pruebas fuera de horas críticas si aplica.  
+[ ] - Plan de reversión y contacto de emergencia obligatorio.
+
+## Entregables mínimos
+1. RoE & SOW firmados.  
+2. Inventario de alcance (IPs/domains/hosts).  
+3. Registro de actividad (comandos, timestamps, outputs).  
+4. Informe (Resumen ejecutivo + Hallazgos técnicos + PoC + Recomendaciones + Evidencia).  
+5. Certificado de limpieza (evidence of cleanup).
+
+## Referencias normativas y buenas prácticas (lectura corta)
+- NIST SP 800-115 — guía técnica para testing y evaluación. :contentReference[oaicite:4]{index=4}  
+- OWASP Web Security Testing Guide — enumeración y explotación web. :contentReference[oaicite:5]{index=5}  
+- PTES — fases y checklist de ejecución de pentest. :contentReference[oaicite:6]{index=6}  
+- OSSTMM — enfoque de medición y cobertura de pruebas. :contentReference[oaicite:7]{index=7}  
+- Plantillas/ejemplos de RoE y contratos (templates). :contentReference[oaicite:8]{index=8}
+
+# Glosario de términos técnicos
+SOW (Statement of Work)        → Documento que define qué se va a entregar, los objetivos, el alcance y los resultados esperados de la prueba de penetración, incluyendo los entregables, fechas y limitaciones del proyecto.
+RoE (Rules of Engagement)      → Documento que establece cómo se debe realizar la prueba, los métodos permitidos, límites legales y de seguridad, asegurando que el pentester y el cliente actúen de forma segura y ética durante toda la evaluación.
+IP / Domain / Range            → Direcciones de red o nombres de servidor a probar.
+OSINT                          → Información que se obtiene de fuentes públicas.
+Footprinting / Huella          → Detectar y documentar servicios y sistemas activos.
+PoC (Proof-of-Concept)         → Prueba que demuestra que la vulnerabilidad existe.
+IDOR / XXE                      → Vulnerabilidades web avanzadas: control de acceso y manipulación de XML.
+Pillaging                       → Revisar información dentro de un sistema ya comprometido.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+NOTA: sigue estrictamente el bloque **“Reglas previas”** y adjunta siempre el RoE/SOW firmado antes de cualquier reconocimiento activo o explotación.
+
+======================================================================================================================================================
+## 🎃 Ejercicios y preguntas de la Academia
+Antes de preguntar algo, enumera lo que sabes y lo que ya intentaste, así demuestras esfuerzo, organizas tus ideas y aumentas las probabilidades de obtener una respuesta útil en lugar de solo pedir la solución.
 
 ======================================================================================================================================================
 ## 🎃 
