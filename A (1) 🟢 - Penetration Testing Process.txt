@@ -1,1 +1,13 @@
+======================================================================================================================================================
+## 🎃 Introducción a la ruta del probador de penetración
+Nuestra filosofía es "aprender haciendo", siguiendo un enfoque basado en el riesgo, con un fuerte énfasis en el aprendizaje práctico y el uso ético y legal de nuestras habilidades. Nos esforzamos por enseñar a nuestros estudiantes el porqué de una vulnerabilidad y cómo descubrirla, explotarla, remediarla, detectarla y prevenirla para formar profesionales integrales que puedan transmitir este conocimiento y mentalidad integrales a sus clientes o empleadores actuales y futuros, para ayudarles a proteger a su personal, tecnologías y misiones de las ciberamenazas modernas.
 
+======================================================================================================================================================
+## 🎃 Consideraciones éticas y legales
+Una parte esencial de la filosofía anterior son los términos legaly ethical. Realizar CUALQUIER escaneo o actividad que interactúe con ANYlos sistemas de una organización sin el consentimiento explícito por escrito en forma de un Alcance del trabajo (incluido un alcance detallado de las pruebas, el contrato y las reglas de participación) firmado por ambas partes es ilegal y podría dar lugar a acciones legales e incluso penales en nuestra contra.
+Una vez que consiga su primer trabajo de pruebas de penetración, investigue a fondo para asegurarse de que la empresa sea legítima y realice evaluaciones solo después de que se haya completado la coordinación explícita (y la documentación del contrato) entre la empresa objetivo y el cliente.
+
+El plan simula una prueba de penetración contra la empresa Inlanefreight, dividida en varias etapas, que abarcan los conceptos y herramientas clave que nos diferenciarán como expertos en pruebas de penetración. El plan culmina con un módulo detallado sobre habilidades blandas esenciales como la toma de notas, la organización, la documentación, la generación de informes y la comunicación con el cliente, y posteriormente con un simulacro completo de prueba de penetración para practicar todas nuestras habilidades en una gran red empresarial simulada. Los módulos que componen el plan se detallan a continuación. Después de completar esta ruta, recomendamos que los estudiantes trabajen hacia una especialización, ya sea Active Directory, Web o Ingeniería Inversa.
+
+======================================================================================================================================================
+## 🎃 
