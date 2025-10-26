@@ -29,3 +29,10 @@ x = 28*18/1 = 168
 168/30= 5,6
 
 + En completar el curso tardo una media aproximada de 1 año y 4 meses realizando cada día 1 sección por curso
+
+## 🎃 Como conectarme por vpn en academy
+- entro en la siguiente url y configuro la vpn a mis caracteristicas y lo descargo : https://academy.hackthebox.com/vpn
+- en mi consola lanzo el siguiente comando y lo dejo activado en segundo plano : sudo openvpn <archivo-vpn-descargado>
+- lanzo un "ip a" para comprobar y aparecera una nueva ip como 10.10.25.246 
+- lanzo un ping para comprobar que llega hacer conexión a la nueva ip 10.10.25.246 
+
