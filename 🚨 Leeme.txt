@@ -16,3 +16,16 @@ x = 28*6/1 = 168
 168/30= 5,6
 
 + En completar el curso tardo una media aproximada de 6 meses realizando cada día tres secciones por curso
+
+# --------------------------------------------------------------------------------------------------------
+
+- si realizo 1 secció cada día y cada curso tiene unas 18 secciones aproximadamente, hago una media de 1 curso cada 18 días
+- el curso tiene 28 modulos
+
+28 m -----> X
+1 m ------> 18 d
+
+x = 28*18/1 = 168
+168/30= 5,6
+
++ En completar el curso tardo una media aproximada de 1 año y 4 meses realizando cada día 1 sección por curso
