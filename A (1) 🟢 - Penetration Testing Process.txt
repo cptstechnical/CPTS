@@ -168,3 +168,7 @@ Medidas de precaución durante las pruebas de penetración
 [ ] - No intercepte las comunicaciones electrónicas sin el consentimiento de una de las partes involucradas en la comunicación.
 [ ] - No realice pruebas en sistemas o redes cubiertos por la Ley de Portabilidad y Responsabilidad de Seguros Médicos (HIPAA) sin la debida autorización.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+======================================================================================================================================================
+## 🎃 Proceso de prueba de penetración
