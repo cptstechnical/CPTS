@@ -3,8 +3,8 @@
 [texto-inicial]
 Nuestra filosofía se basa en “aprender haciendo”, con un enfoque práctico y orientado al riesgo, promoviendo el uso ético y legal de las habilidades. Buscamos formar profesionales completos que comprendan, exploten, mitiguen y prevengan vulnerabilidades, capaces de proteger sistemas y personas ante ciberamenazas modernas.
 
-======================================================================================================================================================
-## 🎃 Consideraciones éticas y legales
+Consideraciones éticas y legales
+********************************
 [texto-inicial]
 - Legal/Ethical: Todo escaneo o interacción con sistemas de terceros requiere consentimiento por escrito (Alcance de Trabajo, contrato y RoE firmados). Sin ello es ilegal y puede acarrear responsabilidades civiles y penales.
 - Verificación del cliente: Antes de aceptar un encargo, verificar la legitimidad de la empresa y confirmar la coordinación y documentación contractual.
@@ -14,7 +14,7 @@ Nuestra filosofía se basa en “aprender haciendo”, con un enfoque práctico 
 - Siguiente paso: Tras completar la ruta, se recomienda especializarse en Active Directory, Web o Ingeniería inversa.
 
 ======================================================================================================================================================
-## 🎃 Disposición de los módulos de la Academia
+## 🎃 Diseño de los módulos de la academia
 # Checklist seguro y conciso para Pentest (lista para seguir paso a paso)
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 ## 0) Reglas previas (obligatorio antes de cualquier prueba)
@@ -94,4 +94,30 @@ NOTA: sigue estrictamente el bloque **“Reglas previas”** y adjunta siempre e
 Antes de preguntar algo, enumera lo que sabes y lo que ya intentaste, así demuestras esfuerzo, organizas tus ideas y aumentas las probabilidades de obtener una respuesta útil en lugar de solo pedir la solución.
 
 ======================================================================================================================================================
-## 🎃 
+## 🎃 Descripción general de las pruebas de penetración
+- Vulnerability analysis: Es un término genérico que puede incluir evaluaciones de vulnerabilidad o seguridad y pruebas de penetración. A diferencia de una prueba de penetración, las evaluaciones de vulnerabilidad o seguridad se realizan mediante herramientas totalmente automatizadas. (Nessus, Qualys, OpenVAS).
+
+Métodos de prueba
+*****************
+- Prueba de penetración External: prueba desde Internet (nuestro servidor/VPS, a veces vía VPN). Puede ser sigilosa o gradual; objetivo: acceder a servidores expuestos, robar datos o entrar en la red interna.
+- Prueba de penetración Interna: prueba desde dentro de la red (tras un acceso previo o simulando una brecha). Puede requerir presencia física para sistemas aislados; objetivo: controlar recursos internos y encontrar fallos internos.
+
+Tipos de pruebas de penetración
+*******************************
+- Blackbox: MinimalSolo se proporciona la información esencial, como direcciones IP y dominios.
+- Greybox: ExtendedEn este caso, se nos proporciona información adicional, como URL específicas, nombres de host, subredes y similares.
+- Whitebox MaximumAquí se nos revela toda la información. Esto nos proporciona una visión interna de toda la estructura, lo que nos permite preparar un ataque utilizando información interna. Es posible que se nos faciliten configuraciones detalladas, credenciales de administrador, el código fuente de la aplicación web, etc.
+- Red-Teaming: Puede incluir pruebas físicas e ingeniería social, entre otras cosas. Puede combinarse con cualquiera de los tipos mencionados anteriormente.
+- Purple-Teaming:	Puede combinarse con cualquiera de los tipos anteriores. Sin embargo, se centra en trabajar estrechamente con los defensores.
+
+Tipos de entornos de prueba
+***************************
++--------------+----------------+------------------------+------------------+-------------------+
+| Red          | Aplicación web | Móvil                  | API              | Clientes gruesos  |
++--------------+----------------+------------------------+------------------+-------------------+
+| IoT          | Nube           | Código fuente          | Seguridad física | Empleados         |
++--------------+----------------+------------------------+------------------+-------------------+
+| Anfitriones  | Servidor       | Políticas de seguridad | Cortafuegos      | IDS/IPS           |
++--------------+----------------+------------------------+------------------+-------------------+
+
+
