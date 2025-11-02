@@ -121,3 +121,50 @@ Tipos de entornos de prueba
 +--------------+----------------+------------------------+------------------+-------------------+
 
 
+======================================================================================================================================================
+## 🎃 Leyes y reglamentos
+- Resumen muy breve — leyes y puntos clave
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+EE. UU.
+- CFAA: prohíbe accesos no autorizados a sistemas. Críticas por ambigüedad.
+- DMCA: prohíbe eludir medidas tecnológicas de protección (riesgo legal para investigadores).
+- ECPA: protege la interceptación de comunicaciones electrónicas; requiere consentimiento.
+- HIPAA: protege datos médicos; exige medidas de seguridad y privacidad.
+- COPPA: restringe la recopilación de datos de menores <13 años sin consentimiento.
+
+Europa
+- RGPD: regula tratamiento de datos personales; multas hasta 4% facturación o €20M.
+- NIS: exige seguridad y notificación de incidentes a operadores esenciales y proveedores digitales.
+- Convenio de Ciberdelincuencia: marco de cooperación internacional contra delitos informáticos.
+- Directiva 2002/58: reglas sobre privacidad y comunicaciones electrónicas.
+
+Reino Unido
+- Computer Misuse Act 1990: delito acceder o alterar sistemas sin autorización.
+- Data Protection Act 2018: derechos y obligaciones sobre datos personales (similar RGPD).
+- Human Rights Act 1998: incorpora derechos del Convenio Europeo (privacidad, etc.).
+- Police and Justice Act 2006: reforma penal y medidas contra delitos graves.
+- Investigatory Powers Act 2016 (IPA) y RIPA 2000: regulan poderes/investigación y retención/vigilancia de telecomunicaciones.
+
+India
+- IT Act 2000: reconoce transacciones electrónicas y tipifica hackeo y accesos no autorizados.
+- Personal Data Protection Bill (2019): propuesta para proteger datos personales.
+- Indian Evidence Act (1872) y IPC (1860): disposiciones aplicables a ciberdelitos.
+
+China
+- Cybersecurity Law: marco para proteger infraestructuras y datos; obligación de seguridad y notificación.
+- National Security / Anti-terror / otras leyes: penalizan accesos no autorizados que afecten la seguridad nacional.
+- Reglas sobre transferencias transfronterizas y protección de infraestructuras críticas: evaluaciones y autorizaciones para mover datos fuera del país.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nota: Estas leyes afectan investigación y pruebas de seguridad; actuar con cautela, obtener autorizaciones y cumplir requisitos de privacidad y notificación.
+
+Medidas de precaución durante las pruebas de penetración
+********************************************************
+- lista de precauciones que recomendamos encarecidamente seguir durante cada prueba de penetración para evitar infringir la mayoría de las leyes. 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+[ ] - Obtenga el consentimiento por escrito del propietario o representante autorizado del ordenador o red que se está probando.
+[ ] - Realice las pruebas únicamente dentro del alcance del consentimiento obtenido y respete las limitaciones especificadas.
+[ ] - Tome medidas para evitar dañar los sistemas o redes que se están probando.
+[ ] - No acceda, utilice ni divulgue datos personales ni ninguna otra información obtenida durante las pruebas sin autorización.
+[ ] - No intercepte las comunicaciones electrónicas sin el consentimiento de una de las partes involucradas en la comunicación.
+[ ] - No realice pruebas en sistemas o redes cubiertos por la Ley de Portabilidad y Responsabilidad de Seguros Médicos (HIPAA) sin la debida autorización.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
