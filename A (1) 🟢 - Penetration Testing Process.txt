@@ -82,8 +82,8 @@ IP / Domain / Range            → Direcciones de red o nombres de servidor a pr
 OSINT                          → Información que se obtiene de fuentes públicas.
 Footprinting / Huella          → Detectar y documentar servicios y sistemas activos.
 PoC (Proof-of-Concept)         → Prueba que demuestra que la vulnerabilidad existe.
-IDOR / XXE                      → Vulnerabilidades web avanzadas: control de acceso y manipulación de XML.
-Pillaging                       → Revisar información dentro de un sistema ya comprometido.
+IDOR / XXE                     → Vulnerabilidades web avanzadas: control de acceso y manipulación de XML.
+Pillaging                      → Revisar información dentro de un sistema ya comprometido.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
