@@ -64,12 +64,33 @@ def traducir_frase(texto):
     translated = model.generate(**tokenizer(texto, return_tensors="pt", padding=True))
     return tokenizer.decode(translated[0], skip_special_tokens=True)
 
-# Ejemplo de uso
+def dividir_texto(texto, max_len=1000):
+    """Divide el texto en bloques de palabras"""
+    palabras = texto.split()
+    bloques = []
+    for i in range(0, len(palabras), max_len):
+        bloques.append(" ".join(palabras[i:i+max_len]))
+    return bloques
+
 if __name__ == "__main__":
-    texto = "Gracias a un sistema que hace de barrera contra mi sistema consigo que las redes no accedan a mis apartados"
-    resultado = traducir_frase(texto)
-    if resultado:
-        print(resultado)
+    # Cargar documento
+    with open("documento.txt", "r", encoding="utf-8") as f:
+        texto = f.read()
+
+    bloques = dividir_texto(texto, max_len=1000)
+    traducciones = []
+
+    for i, bloque in enumerate(bloques, 1):
+        print(f"Traduciendo bloque {i}...")
+        resultado = traducir_frase(bloque)
+        if resultado:
+            traducciones.append(resultado)
+
+    # Guardar traducción final
+    with open("documento_traducido.txt", "w", encoding="utf-8") as f:
+        f.write("\n\n".join(traducciones))
+
+    print("Traducción completada: documento_traducido.txt")
 -------------------------------------------------------------------
 
 # Ejemplo de uso
@@ -143,6 +164,7 @@ def contar_tokens(texto):
 
 def traducir_frase(texto):
     doc = nlp(texto)
+    # Reemplazar términos técnicos
     for ent in doc.ents:
         if ent.text.lower() in terminos_cyber:
             texto = texto.replace(ent.text, terminos_cyber[ent.text.lower()])
@@ -156,6 +178,7 @@ def traducir_frase(texto):
     return tokenizer.decode(translated[0], skip_special_tokens=True)
 
 def dividir_texto(texto, max_len=1000):
+    """Divide el texto en bloques de palabras"""
     palabras = texto.split()
     bloques = []
     for i in range(0, len(palabras), max_len):
