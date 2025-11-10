@@ -1,0 +1,192 @@
+## utilizo el script de "script-traductor.py"
+# traduce los textos del español al ingles de manera técnica y sin saltarme ninguna palabra técnica de ciberseguridad
+
+===========================================================================================================================
+[Para Windows]:
+
+# https://www.python.org/downloads/
+python --version
+pip --version
+
+# Crear un entorno virtual
+mkdir traduccion_cyber
+cd traduccion_cyber
+python -m venv venv
+venv\Scripts\activate
+
+# Instalar librerías necesarias
+pip install spacy torch transformers
+python -m spacy download es_core_news_sm
+
+# Script Python (traductor_cyber.py)
+-------------------------------------------------------------------
+import spacy
+from transformers import MarianMTModel, MarianTokenizer
+
+# Cargar modelo NER en español
+nlp = spacy.load("es_core_news_sm")
+
+# Diccionario técnico de ciberseguridad
+terminos_cyber = {
+    "malware": "malware",
+    "ransomware": "ransomware",
+    "vulnerabilidad": "vulnerability",
+    "ataque de denegación de servicio": "denial-of-service attack",
+    "ingeniería social": "social engineering",
+    "firewall": "firewall",
+    "registro de eventos": "event log",
+    "penetración de red": "network penetration",
+}
+
+# Modelo de traducción (MarianMT)
+model_name = "Helsinki-NLP/opus-mt-es-en"
+tokenizer = MarianTokenizer.from_pretrained(model_name)
+model = MarianMTModel.from_pretrained(model_name)
+
+MAX_TOKENS = 500  # límite de tokens
+
+def contar_tokens(texto):
+    tokens = tokenizer.encode(texto, return_tensors="pt")
+    return tokens.shape[1]
+
+def traducir_frase(texto):
+    doc = nlp(texto)
+    # Reemplazar términos técnicos
+    for ent in doc.ents:
+        if ent.text.lower() in terminos_cyber:
+            texto = texto.replace(ent.text, terminos_cyber[ent.text.lower()])
+
+    num_tokens = contar_tokens(texto)
+    if num_tokens > MAX_TOKENS:
+        print(f"⚠️ El bloque tiene {num_tokens} tokens, excede el límite de {MAX_TOKENS}. Divídelo en bloques más pequeños.")
+        return None
+
+    translated = model.generate(**tokenizer(texto, return_tensors="pt", padding=True))
+    return tokenizer.decode(translated[0], skip_special_tokens=True)
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    texto = "Gracias a un sistema que hace de barrera contra mi sistema consigo que las redes no accedan a mis apartados"
+    resultado = traducir_frase(texto)
+    if resultado:
+        print(resultado)
+-------------------------------------------------------------------
+
+# Ejemplo de uso
+texto = "Gracias a un sistema que hace de barrera contra mi sistema consigo que las redes no accedan a mis apartados"
+print(traducir_frase(texto))
+
+
+# Ejecuto el script
+venv\Scripts\activate   # si usaste entorno virtual
+python traductor_cyber.py
+
+# tengo que dividir el texto por fragmentos proque no es capaz de traducir bloques de más de 500–1000 palabras
+
+===========================================================================================================================
+[Para Linux]:
+
+## Instalar Python
+# Actualizar paquetes
+sudo apt update && sudo apt upgrade -y
+# Instalar Python3 y pip
+sudo apt install python3 python3-pip -y
+# Comprobar instalación
+python3 --version
+pip3 --version
+
+## Crear entorno virtual
+mkdir traduccion_cyber
+cd traduccion_cyber
+# Crear entorno virtual
+python3 -m venv venv
+# Activar entorno
+source venv/bin/activate
+
+## Instalar librerías necesarias
+pip install spacy torch transformers
+# Descargar modelo NER en español
+python -m spacy download es_core_news_sm
+
+## Script Python (traductor_cyber.py)
+-------------------------------------------------------------------
+#!/usr/bin/env python3
+
+import spacy
+from transformers import MarianMTModel, MarianTokenizer
+
+# Cargar modelo NER en español
+nlp = spacy.load("es_core_news_sm")
+
+# Diccionario técnico de ciberseguridad
+terminos_cyber = {
+    "malware": "malware",
+    "ransomware": "ransomware",
+    "vulnerabilidad": "vulnerability",
+    "ataque de denegación de servicio": "denial-of-service attack",
+    "ingeniería social": "social engineering",
+    "firewall": "firewall",
+    "registro de eventos": "event log",
+    "penetración de red": "network penetration",
+}
+
+# Modelo de traducción (MarianMT)
+model_name = "Helsinki-NLP/opus-mt-es-en"
+tokenizer = MarianTokenizer.from_pretrained(model_name)
+model = MarianMTModel.from_pretrained(model_name)
+
+MAX_TOKENS = 500  # límite de tokens
+
+def contar_tokens(texto):
+    tokens = tokenizer.encode(texto, return_tensors="pt")
+    return tokens.shape[1]
+
+def traducir_frase(texto):
+    doc = nlp(texto)
+    for ent in doc.ents:
+        if ent.text.lower() in terminos_cyber:
+            texto = texto.replace(ent.text, terminos_cyber[ent.text.lower()])
+
+    num_tokens = contar_tokens(texto)
+    if num_tokens > MAX_TOKENS:
+        print(f"⚠️ El bloque tiene {num_tokens} tokens, excede el límite de {MAX_TOKENS}. Divídelo en bloques más pequeños.")
+        return None
+
+    translated = model.generate(**tokenizer(texto, return_tensors="pt", padding=True))
+    return tokenizer.decode(translated[0], skip_special_tokens=True)
+
+def dividir_texto(texto, max_len=1000):
+    palabras = texto.split()
+    bloques = []
+    for i in range(0, len(palabras), max_len):
+        bloques.append(" ".join(palabras[i:i+max_len]))
+    return bloques
+
+if __name__ == "__main__":
+    # Cargar documento
+    with open("documento.txt", "r", encoding="utf-8") as f:
+        texto = f.read()
+
+    bloques = dividir_texto(texto, max_len=1000)
+    traducciones = []
+
+    for i, bloque in enumerate(bloques, 1):
+        print(f"Traduciendo bloque {i}...")
+        resultado = traducir_frase(bloque)
+        if resultado:
+            traducciones.append(resultado)
+
+    # Guardar traducción final
+    with open("documento_traducido.txt", "w", encoding="utf-8") as f:
+        f.write("\n\n".join(traducciones))
+
+    print("Traducción completada: documento_traducido.txt")
+-------------------------------------------------------------------
+
+# Dar permisos de ejecución
+chmod +x traductor_cyber.py
+
+# Ejecutar directamente
+./traductor_cyber.py
+
+# 
